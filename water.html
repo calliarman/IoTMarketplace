@@ -1,89 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<style>
-  .dropbtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #3e8e41;
-  }
-
-  #waterInput {
-    border-box: box-sizing;
-    background-image: url('searchicon.png');
-    background-position: 14px 12px;
-    background-repeat: no-repeat;
-    font-size: 16px;
-    padding: 14px 20px 12px 45px;
-    border: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  #waterInput:focus {outline: 3px solid #ddd;}
-
-  #electricityInput {
-    border-box: box-sizing;
-    background-image: url('searchicon.png');
-    background-position: 14px 12px;
-    background-repeat: no-repeat;
-    font-size: 16px;
-    padding: 14px 20px 12px 45px;
-    border: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  #electricityInput:focus {outline: 3px solid #ddd;}
-
-
-  #myInput {
-    border-box: box-sizing;
-    background-image: url('searchicon.png');
-    background-position: 14px 12px;
-    background-repeat: no-repeat;
-    font-size: 16px;
-    padding: 14px 20px 12px 45px;
-    border: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  #myInput:focus {outline: 3px solid #ddd;}
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f6f6f6;
-    min-width: 230px;
-    overflow: auto;
-    border: 1px solid #ddd;
-    z-index: 1;
-  }
-
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .dropdown a:hover {background-color: #ddd;}
-
-  .show {display: block;}
-</style>
-
   <head>
 
     <meta charset="utf-8">
@@ -92,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>IOT MARKETPLACE</title>
+    <title>SB Admin - Dashboard</title>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -112,13 +29,12 @@
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-      <a class="navbar-brand mr-1 project-title-text" style="color:white; font-weight:bold;" href="index.html">IOT MARKETPLACE</a>
+      <a class="navbar-brand mr-1" href="index.html">Start Bootstrap</a>
+
       <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
         <i class="fas fa-bars"></i>
       </button>
-	  
-	  <img class="mb-4" src="style/image/ericsson_logo_name_white.png" alt="" width="150" height="37" style="margin: auto!important;margin-right: -1.5rem!important;">
-	  
+
       <!-- Navbar Search -->
       <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         <div class="input-group">
@@ -133,6 +49,30 @@
 
       <!-- Navbar -->
       <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow mx-1">
+          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bell fa-fw"></i>
+            <span class="badge badge-danger">9+</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown no-arrow mx-1">
+          <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-envelope fa-fw"></i>
+            <span class="badge badge-danger">7</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
         <li class="nav-item dropdown no-arrow">
           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user-circle fa-fw"></i>
@@ -167,21 +107,29 @@
         </li>
 
 
-
-        <li class="nav-item active dropdown">
-          <button onclick="openWaterPanel()" class="nav-link dropbtn">Water</button>
+        <li class="nav-item active">
+          <a class="nav-link" href="water.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Water</span>
+          </a>
         </li>
 
-        <li class="nav-item active dropdown">
-          <button onclick="openElectricityPanel()" class="nav-link dropbtn">Electricity</button>
+        <li class="nav-item active">
+          <a class="nav-link" href="electricity.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Electricity</span>
+          </a>
         </li>
 
-        <li class="nav-item active dropdown">
-          <button onclick="openGasPanel()" class="nav-link dropbtn">Gas</button>
+        <li class="nav-item active">
+          <a class="nav-link" href="gas.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Gas</span>
+          </a>
         </li>
+
+        
       </ul>
-
-
 
       <div id="content-wrapper">
 
@@ -261,41 +209,6 @@
                 </a>
               </div>
             </div>
-          </div>
-
-          <div id="waterDropdown" class="dropdown-content">
-            <input type="text" placeholder="Water industry" id="waterInput" onkeyup="filterFunctionWater()">
-            <a href="#about">About</a>
-            <a href="#base">Base</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-            <a href="#custom">Custom</a>
-            <a href="#support">Support</a>
-            <a href="#tools">Tools</a>
-          </div>
-
-
-          <div id="electricityDropdown" class="dropdown-content">
-            <input type="text" placeholder="Electricity industry" id="electricityInput" onkeyup="filterFunctionElectricity()">
-            <a href="#about">About</a>
-            <a href="#base">Base</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-            <a href="#custom">Custom</a>
-            <a href="#support">Support</a>
-            <a href="#tools">Tools</a>
-          </div>
-
-
-          <div id="myDropdown" class="dropdown-content">
-            <input type="text" placeholder="Gas industry" id="myInput" onkeyup="filterFunctionGas()">
-            <a href="#about">About</a>
-            <a href="#base">Base</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact">Contact</a>
-            <a href="#custom">Custom</a>
-            <a href="#support">Support</a>
-            <a href="#tools">Tools</a>
           </div>
 
           <!-- Area Chart Example-->
@@ -819,8 +732,6 @@
     </div>
     <!-- /#wrapper -->
 
-
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fas fa-angle-up"></i>
@@ -864,74 +775,6 @@
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
 
-
-
-
-    <script>
-        /* When the user clicks on the button,
-        toggle between hiding and showing the dropdown content */
-
-
-
-        function openWaterPanel() {
-            document.getElementById("waterDropdown").classList.toggle("show");
-        }
-
-        function filterFunctionWater() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("waterInput");
-            filter = input.value.toUpperCase();
-            div = document.getElementById("waterDropdown");
-            a = div.getElementsByTagName("a");
-            for (i = 0; i < a.length; i++) {
-                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    a[i].style.display = "";
-                } else {
-                    a[i].style.display = "none";
-                }
-            }
-        }
-
-
-        function openElectricityPanel() {
-            document.getElementById("electricityDropdown").classList.toggle("show");
-        }
-
-        function filterFunctionElectricity() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("electricityInput");
-            filter = input.value.toUpperCase();
-            div = document.getElementById("electricityDropdown");
-            a = div.getElementsByTagName("a");
-            for (i = 0; i < a.length; i++) {
-                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    a[i].style.display = "";
-                } else {
-                    a[i].style.display = "none";
-                }
-            }
-        }
-
-
-        function openGasPanel() {
-            document.getElementById("myDropdown").classList.toggle("show");
-        }
-
-        function filterFunctionGas() {
-            var input, filter, ul, li, a, i;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            div = document.getElementById("myDropdown");
-            a = div.getElementsByTagName("a");
-            for (i = 0; i < a.length; i++) {
-                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                    a[i].style.display = "";
-                } else {
-                    a[i].style.display = "none";
-                }
-            }
-        }
-    </script>
   </body>
 
 </html>
