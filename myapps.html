@@ -1,6 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+  .water-dropdown{
+    top:167px;
+  }
+
+  .electricity-dropdown{
+    top:224px;
+  }
+
+  .gas-dropdown{
+    top:280px;
+  }
+
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+  }
+
+  #waterInput {
+    border-box: box-sizing;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 18px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #waterInput:focus {outline: 3px solid #ddd;}
+
+  #electricityInput {
+    border-box: box-sizing;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 18px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #electricityInput:focus {outline: 3px solid #ddd;}
+
+
+  #myInput {
+    border-box: box-sizing;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 18px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #myInput:focus {outline: 3px solid #ddd;}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown a:hover {background-color: #ddd;}
+
+  .show {display: block;}
+</style>
+
 <head>
 
   <meta charset="utf-8">
@@ -84,30 +181,58 @@
     </li>
 
 
-    <li class="nav-item active">
-      <a class="nav-link" href="water.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Water</span>
-      </a>
+    <li class="nav-item active dropdown">
+      <button onclick="openWaterPanel()" class="nav-link dropbtn">Water</button>
     </li>
 
-    <li class="nav-item active">
-      <a class="nav-link" href="electricity.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Electricity</span>
-      </a>
+    <li class="nav-item active dropdown">
+      <button onclick="openElectricityPanel()" class="nav-link dropbtn">Electricity</button>
     </li>
 
-    <li class="nav-item active">
-      <a class="nav-link" href="gas.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Gas</span>
-      </a>
+    <li class="nav-item active dropdown">
+      <button onclick="openGasPanel()" class="nav-link dropbtn">Gas</button>
     </li>
 
   </ul>
 
   <div id="content-wrapper">
+
+
+    <div id="waterDropdown" class="dropdown-content water-dropdown">
+      <input type="text" placeholder="Water industry" id="waterInput" onkeyup="filterFunctionWater()">
+      <a href="#about">About</a>
+      <a href="#base">Base</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#custom">Custom</a>
+      <a href="#support">Support</a>
+      <a href="#tools">Tools</a>
+    </div>
+
+
+    <div id="electricityDropdown" class="dropdown-content electricity-dropdown">
+      <input type="text" placeholder="Electricity industry" id="electricityInput" onkeyup="filterFunctionElectricity()">
+      <a href="#about">About</a>
+      <a href="#base">Base</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#custom">Custom</a>
+      <a href="#support">Support</a>
+      <a href="#tools">Tools</a>
+    </div>
+
+
+    <div id="myDropdown" class="dropdown-content gas-dropdown">
+      <input type="text" placeholder="Gas industry" id="myInput" onkeyup="filterFunctionGas()">
+      <a href="#about">About</a>
+      <a href="#base">Base</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#custom">Custom</a>
+      <a href="#support">Support</a>
+      <a href="#tools">Tools</a>
+    </div>
+
 
     <div class="container-fluid">
 
@@ -196,6 +321,8 @@
         </div>
       </div>
 
+
+
       <!-- <ol class="breadcrumb">
           <li class="breadcrumb-item">
             <a href="#">Apps</a>
@@ -267,6 +394,74 @@
 <!-- Demo scripts for this page-->
 <script src="js/demo/datatables-demo.js"></script>
 <script src="js/demo/chart-area-demo.js"></script>
+
+
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+
+
+
+    function openWaterPanel() {
+        document.getElementById("waterDropdown").classList.toggle("show");
+    }
+
+    function filterFunctionWater() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("waterInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("waterDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+
+
+    function openElectricityPanel() {
+        document.getElementById("electricityDropdown").classList.toggle("show");
+    }
+
+    function filterFunctionElectricity() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("electricityInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("electricityDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+
+
+    function openGasPanel() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    function filterFunctionGas() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
 
 </body>
 
