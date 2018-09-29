@@ -20,6 +20,10 @@
     background-repeat: no-repeat;
     background-size: contain;  }
 
+  .dropdown-item-small{
+      left: 90px !important;
+  }
+
   .utilities-dropdown{
       top: 173px;
       left: 225px;
@@ -211,7 +215,7 @@
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
       <a class="navbar-brand mr-1 project-title-text" style="color:white; font-weight:bold;" href="index.html">IoT MARKETPLACE</a>
-      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" onclick="hamburgerMenuPressed()" href="#">
         <i class="fas fa-bars"></i>
       </button>
 	  
@@ -358,6 +362,71 @@
 
       <div id="content-wrapper">
 
+          <div id="closeLayer" class="" onclick="closeIndustryPanels()">
+
+          </div>
+
+          <div id="utilitiesDropdown" class="dropdown-content utilities-dropdown">
+              <input type="text" placeholder="Utilities industry" id="utilitiesInput" onkeyup="filterFunctionUtilities()">
+              <a href="gediz.html">Gediz</a>
+              <a href="#base">Iski</a>
+              <a href="#blog">Izsu</a>
+              <a href="#contact">Tedas</a>
+              <a href="#custom">Medas</a>
+              <a href="#support">Adm</a>
+              <a href="#tools">Deski</a>
+          </div>
+          <div id="electricityDropdown" class="dropdown-content electricity-dropdown">
+              <input type="text" placeholder="Electricity industry" id="electricityInput" onkeyup="filterFunctionElectricity()">
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+          </div>
+          <div id="automativeDropdown" class="dropdown-content automative-dropdown">
+              <input type="text" placeholder="Automative industry" id="automativeInput" onkeyup="filterFunctionAutomative()">
+              <a href="#about">Audi</a>
+              <a href="#base">Renault</a>
+              <a href="#blog">Bmw</a>
+              <a href="#contact">Wolksvagen</a>
+              <a href="#custom">Fiat</a>
+              <a href="#support">Mercedes</a>
+              <a href="#tools">Porsche</a>
+          </div>
+          <div id="agricultureDropdown" class="dropdown-content agriculture-dropdown">
+              <input type="text" placeholder="Agriculture industry" id="agricultureInput" onkeyup="filterFunctionAgriculture()">
+              <a href="#about">Etko</a>
+              <a href="#base">Tarsa</a>
+              <a href="#blog">Torku</a>
+              <a href="#contact">Orion</a>
+              <a href="#custom">Atlas</a>
+              <a href="#support">Adm</a>
+              <a href="#tools">Bunge</a>
+          </div>
+          <div id="manufactoringDropdown" class="dropdown-content manufactoring-dropdown">
+              <input type="text" placeholder="Manufactoring industry" id="manufactoringInput" onkeyup="filterFunctionManufactoring()">
+              <a href="#about">Flavourtech</a>
+              <a href="#base">Honeywell</a>
+              <a href="#blog">Flexlink</a>
+              <a href="#contact">Orimpex</a>
+              <a href="#custom">Gaspara</a>
+              <a href="#support">RigaWood</a>
+              <a href="#tools">Felda</a>
+          </div>
+          <div id="transportationDropdown" class="dropdown-content transportation-dropdown">
+              <input type="text" placeholder="Transportation industry" id="transportationInput" onkeyup="filterFunctionTransportation()">
+              <a href="#about">Thy</a>
+              <a href="#base">Origin</a>
+              <a href="#blog">UnitedArabShipping</a>
+              <a href="#contact">Omega</a>
+              <a href="#custom">Catoni</a>
+              <a href="#support">Compass</a>
+              <a href="dhl.html">Dhl</a>
+          </div>
+
           <div class="container-fluid"></div>
 
              <!-- Breadcrumbs-->
@@ -448,75 +517,7 @@
               </div>
         </div>
 
-        <div id="closeLayer" class="" onclick="closeIndustryPanels()">
 
-        </div>
-
-
-          <div id="utilitiesDropdown" class="dropdown-content utilities-dropdown">
-          <input type="text" placeholder="Utilities industry" id="utilitiesInput" onkeyup="filterFunctionUtilities()">
-          <a href="gediz.html">Gediz</a>
-          <a href="#base">Iski</a>
-          <a href="#blog">Izsu</a>
-          <a href="#contact">Tedas</a>
-          <a href="#custom">Medas</a>
-          <a href="#support">Adm</a>
-          <a href="#tools">Deski</a>
-        </div>
-
-        <div id="electricityDropdown" class="dropdown-content electricity-dropdown">
-          <input type="text" placeholder="Electricity industry" id="electricityInput" onkeyup="filterFunctionElectricity()">
-          <a href="#about">About</a>
-          <a href="#base">Base</a>
-          <a href="#blog">Blog</a>
-          <a href="#contact">Contact</a>
-          <a href="#custom">Custom</a>
-          <a href="#support">Support</a>
-          <a href="#tools">Tools</a>
-        </div>
-          <div id="automativeDropdown" class="dropdown-content automative-dropdown">
-              <input type="text" placeholder="Automative industry" id="automativeInput" onkeyup="filterFunctionAutomative()">
-              <a href="#about">Audi</a>
-              <a href="#base">Renault</a>
-              <a href="#blog">Bmw</a>
-              <a href="#contact">Wolksvagen</a>
-              <a href="#custom">Fiat</a>
-              <a href="#support">Mercedes</a>
-              <a href="#tools">Porsche</a>
-          </div>
-
-          <div id="agricultureDropdown" class="dropdown-content agriculture-dropdown">
-              <input type="text" placeholder="Agriculture industry" id="agricultureInput" onkeyup="filterFunctionAgriculture()">
-              <a href="#about">Etko</a>
-              <a href="#base">Tarsa</a>
-              <a href="#blog">Torku</a>
-              <a href="#contact">Orion</a>
-              <a href="#custom">Atlas</a>
-              <a href="#support">Adm</a>
-              <a href="#tools">Bunge</a>
-          </div>
-
-          <div id="manufactoringDropdown" class="dropdown-content manufactoring-dropdown">
-              <input type="text" placeholder="Manufactoring industry" id="manufactoringInput" onkeyup="filterFunctionManufactoring()">
-              <a href="#about">Flavourtech</a>
-              <a href="#base">Honeywell</a>
-              <a href="#blog">Flexlink</a>
-              <a href="#contact">Orimpex</a>
-              <a href="#custom">Gaspara</a>
-              <a href="#support">RigaWood</a>
-              <a href="#tools">Felda</a>
-          </div>
-
-        <div id="transportationDropdown" class="dropdown-content transportation-dropdown">
-          <input type="text" placeholder="Transportation industry" id="transportationInput" onkeyup="filterFunctionTransportation()">
-          <a href="#about">Thy</a>
-          <a href="#base">Origin</a>
-          <a href="#blog">UnitedArabShipping</a>
-          <a href="#contact">Omega</a>
-          <a href="#custom">Catoni</a>
-          <a href="#support">Compass</a>
-          <a href="dhl.html">Dhl</a>
-        </div>
 
 
 
@@ -820,6 +821,26 @@
         /* When the user clicks on the button,
         toggle between hiding and showing the dropdown content */
 
+        function hamburgerMenuPressed() {
+            if($( "#page-top" ).hasClass( "sidebar-toggled" )){
+                document.getElementById("utilitiesDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("electricityDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("transportationDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("automativeDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("agricultureDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("manufactoringDropdown").classList.remove("dropdown-item-small");
+
+
+            }else{
+
+                document.getElementById("utilitiesDropdown").classList.add("dropdown-item-small");
+                document.getElementById("electricityDropdown").classList.add("dropdown-item-small");
+                document.getElementById("transportationDropdown").classList.add("dropdown-item-small");
+                document.getElementById("automativeDropdown").classList.add("dropdown-item-small");
+                document.getElementById("agricultureDropdown").classList.add("dropdown-item-small");
+                document.getElementById("manufactoringDropdown").classList.add("dropdown-item-small");
+            }
+        }
 
         function showCloseLayer() {
             document.getElementById("closeLayer").classList.add("show");
