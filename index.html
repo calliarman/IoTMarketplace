@@ -118,6 +118,19 @@
 
   #agricultureInput:focus {outline: 3px solid #ddd;}
 
+  #manufactoringInput {
+      border-box: box-sizing;
+      background-image: url('searchicon.png');
+      background-position: 14px 12px;
+      background-repeat: no-repeat;
+      font-size: 16px;
+      padding: 14px 20px 18px 45px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+  }
+
+  #manufactoringInput:focus {outline: 3px solid #ddd;}
+
   #transportationInput {
     
     background-image: url('searchicon.png');
@@ -292,6 +305,22 @@
               </button>
           </li>
 
+
+          <li class="nav-item active dropdown">
+              <button onclick="openManufactoringPanel()" class="nav-link dropbtn">
+
+
+                  <img class="sidebar-size" src="images/manufactoring.jpg">
+
+                  <!--
+                              <img class="sidebar-size" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVGhD1dk7aBRhGIXh9YJ4BYUg4q3wUohgYyAINha2Whkbq4CQJiKCqJVYKagYCBbGQgQLRRJIE2wFmyhpAgYCwSLGC4qFiIp331MI8nMi7hQ7cw48XYrvZHd25v+m1YHcwy/jPdYiIjvwA67IRcTkOlyJT1iPiHRBA7sig4jJBbgSX7AZEVmBt3BFhhGTAbgS37AdEVmKWbgidxCTXrgS+hnejZhMwhUZQUwOwJWQvYjJA7gS44jJHvyEK7IfMbkNV+IhYrIVX+GKHERMrsKVeIyY6EzxAa7IYcTkHFyJKSxCRJbhJVyRfqxrU20nxuNwJaoaRcezGNNwA1WhJ+Nd6Hh0IbuBqrqJWvIIbqAqdCTehI5nH9xAVdW2UTmGG22agSvxDvrFisgaaGBX5DRichauxByWIyKrsdBGpQ8xOQNX4imWICKr8AauyCHERBeyK6F7UExW4jVckaij7ym4EmOIiXa/r1CW+I6oJd1JlCXkFmKiT8Mdtj5jC2JyAmUJuYxGZgO2FXZiHmUJfRrdKP9eb7VqzyWUA7dDy+5GvLnSf9gN+D/uQ3f9xuQZ3KAL0W5Y7xYbtya6Ajewo+PsUTQyPXBDl15AX8XGRl+R53DD//EEG9H4XIMrIHehG2RE9CRbFtBFfR4xu19FG8e/H0k+4ggiMwSV0PUS9dKzjN7mTiDiov5XtESoca3Tav0GlV6fG4Lh+IoAAAAASUVORK5CYII=">
+                  -->
+
+                  <span>Manufactoring</span>
+
+              </button>
+          </li>
+
         <li class="nav-item active dropdown">
           <button onclick="openTransportationPanel()" class="nav-link dropbtn">
 
@@ -458,6 +487,17 @@
 
           <div id="agricultureDropdown" class="dropdown-content agriculture-dropdown">
               <input type="text" placeholder="Agriculture industry" id="agricultureInput" onkeyup="filterFunctionAgriculture()">
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+          </div>
+
+          <div id="manufactoringDropdown" class="dropdown-content manufactoring-dropdown">
+              <input type="text" placeholder="Manufactoring industry" id="manufactoringInput" onkeyup="filterFunctionManufactoring()">
               <a href="#about">About</a>
               <a href="#base">Base</a>
               <a href="#blog">Blog</a>
@@ -787,8 +827,10 @@
             document.getElementById("utilitiesDropdown").classList.remove("show");
             document.getElementById("electricityDropdown").classList.remove("show");
             document.getElementById("transportationDropdown").classList.remove("show");
-            document.getElementById("sutomativeDropdown").classList.remove("show");
-            document.getElementById("sgricultureDropdown").classList.remove("show");
+            document.getElementById("automativeDropdown").classList.remove("show");
+            document.getElementById("agricultureDropdown").classList.remove("show");
+            document.getElementById("manufactoringDropdown").classList.remove("show");
+
 
 
             hideCloseLayer();
@@ -811,12 +853,20 @@
             document.getElementById("agricultureDropdown").classList.remove("show");
         }
 
+        function closeManufactoringPanel() {
+            document.getElementById("manufactoringDropdown").classList.remove("show");
+        }
+
         function closeTransportationPanel() {
             document.getElementById("transportationDropdown").classList.remove("show");
         }
 
         function openUtilitiesPanel() {
+            closeUtilitiesPanel();
             closeElectirictyPanel();
+            closeAutomativePanel();
+            closeAgriculturePanel();
+            closeManufactoringPanel();
             closeTransportationPanel();
             document.getElementById("utilitiesDropdown").classList.toggle("show");
 
@@ -845,8 +895,14 @@
 
 
         function openElectricityPanel() {
-            closeTransportationPanel();
             closeUtilitiesPanel();
+            //closeElectirictyPanel();
+            closeAutomativePanel();
+            closeAgriculturePanel();
+            closeManufactoringPanel();
+            closeTransportationPanel();
+
+
             document.getElementById("electricityDropdown").classList.toggle("show");
 
             if($( "#electricityDropdown" ).hasClass( "show" )){
@@ -857,8 +913,12 @@
         }
 
         function openAgriculturePanel() {
-            closeTransportationPanel();
             closeUtilitiesPanel();
+            closeElectirictyPanel();
+            closeAutomativePanel();
+            //closeAgriculturePanel();
+            closeManufactoringPanel();
+            closeTransportationPanel();
             document.getElementById("agricultureDropdown").classList.toggle("show");
 
             if($( "#agricultureDropdown" ).hasClass( "show" )){
@@ -868,9 +928,29 @@
             }
         }
 
-        function openAutomativePanel() {
-            closeTransportationPanel();
+        function openManufactoringPanel() {
             closeUtilitiesPanel();
+            closeElectirictyPanel();
+            closeAutomativePanel();
+            closeAgriculturePanel();
+            //closeManufactoringPanel();
+            closeTransportationPanel();
+            document.getElementById("manufactoringDropdown").classList.toggle("show");
+
+            if($( "#manufactoringDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+        }
+
+        function openAutomativePanel() {
+            closeUtilitiesPanel();
+            closeElectirictyPanel();
+            //closeAutomativePanel();
+            closeAgriculturePanel();
+            closeManufactoringPanel();
+            closeTransportationPanel();
             document.getElementById("automativeDropdown").classList.toggle("show");
 
             if($( "#automativeDropdown" ).hasClass( "show" )){
@@ -915,6 +995,22 @@
             input = document.getElementById("agricultureInput");
             filter = input.value.toUpperCase();
             div = document.getElementById("agricultureDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+
+        function filterFunctionManufactoring() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("manufactoringInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("manufactoringDropdown");
             a = div.getElementsByTagName("a");
             for (i = 0; i < a.length; i++) {
                 if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
