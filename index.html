@@ -13,9 +13,10 @@
     top:224px;
   }
 
-  .gas-dropdown{
+  .telecommunication-dropdown{
     top:280px;
   }
+
   .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -27,6 +28,15 @@
 
   .dropbtn:hover, .dropbtn:focus {
     background-color: #3e8e41;
+  }
+
+
+  #closeLayer{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    z-index: 1;
   }
 
   #waterInput {
@@ -56,7 +66,7 @@
   #electricityInput:focus {outline: 3px solid #ddd;}
 
 
-  #myInput {
+  #telecommunicationInput {
     border-box: box-sizing;
     background-image: url('searchicon.png');
     background-position: 14px 12px;
@@ -67,7 +77,7 @@
     border-bottom: 1px solid #ddd;
   }
 
-  #myInput:focus {outline: 3px solid #ddd;}
+  #telecommunicationInput:focus {outline: 3px solid #ddd;}
 
   .dropdown {
     position: relative;
@@ -93,7 +103,11 @@
 
   .dropdown a:hover {background-color: #ddd;}
 
+
   .show {display: block;}
+
+  .hidden {display: none;}
+
 </style>
 
   <head>
@@ -189,7 +203,7 @@
         </li>
 
         <li class="nav-item active dropdown">
-          <button onclick="openGasPanel()" class="nav-link dropbtn">Gas</button>
+          <button onclick="openTelecommunicationPanel()" class="nav-link dropbtn">Telecommunication</button>
         </li>
       </ul>
 
@@ -197,6 +211,9 @@
 
       <div id="content-wrapper">
 
+        <div id="closeLayer" class="" onclick="closeIndustryPanels()">
+
+        </div>
 
         <div id="waterDropdown" class="dropdown-content water-dropdown">
           <input type="text" placeholder="Water industry" id="waterInput" onkeyup="filterFunctionWater()">
@@ -222,8 +239,8 @@
         </div>
 
 
-        <div id="myDropdown" class="dropdown-content gas-dropdown">
-          <input type="text" placeholder="Gas industry" id="myInput" onkeyup="filterFunctionGas()">
+        <div id="telecommunicationDropdown" class="dropdown-content telecommunication-dropdown">
+          <input type="text" placeholder="Telecommuniaction industry" id="telecommunicationInput" onkeyup="filterFunctionTelecommunication()">
           <a href="#about">About</a>
           <a href="#base">Base</a>
           <a href="#blog">Blog</a>
@@ -888,9 +905,49 @@
         toggle between hiding and showing the dropdown content */
 
 
+        function showCloseLayer() {
+            document.getElementById("closeLayer").classList.add("show");
+            document.getElementById("closeLayer").classList.remove("hidden");
+
+        }
+
+        function hideCloseLayer() {
+            document.getElementById("closeLayer").classList.remove("show");
+            document.getElementById("closeLayer").classList.add("hidden");
+
+        }
+
+        function closeIndustryPanels() {
+            document.getElementById("waterDropdown").classList.remove("show");
+            document.getElementById("electricityDropdown").classList.remove("show");
+            document.getElementById("telecommunicationDropdown").classList.remove("show");
+            hideCloseLayer();
+
+        }
+
+        function closeWaterPanel() {
+            document.getElementById("waterDropdown").classList.remove("show");
+        }
+
+        function closeElectirictyPanel() {
+            document.getElementById("electricityDropdown").classList.remove("show");
+        }
+
+        function closeTelecommunicationPanel() {
+            document.getElementById("telecommunicationDropdown").classList.remove("show");
+        }
 
         function openWaterPanel() {
+            closeElectirictyPanel();
+            closeTelecommunicationPanel();
             document.getElementById("waterDropdown").classList.toggle("show");
+
+            if($( "#waterDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+
         }
 
         function filterFunctionWater() {
@@ -910,7 +967,15 @@
 
 
         function openElectricityPanel() {
+            closeTelecommunicationPanel();
+            closeWaterPanel();
             document.getElementById("electricityDropdown").classList.toggle("show");
+
+            if($( "#electricityDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
         }
 
         function filterFunctionElectricity() {
@@ -929,15 +994,24 @@
         }
 
 
-        function openGasPanel() {
-            document.getElementById("myDropdown").classList.toggle("show");
+        function openTelecommunicationPanel() {
+            closeElectirictyPanel();
+            closeWaterPanel();
+            document.getElementById("telecommunicationDropdown").classList.toggle("show");
+
+
+            if($( "#telecommunicationDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
         }
 
-        function filterFunctionGas() {
+        function filterFunctionTelecommunication() {
             var input, filter, ul, li, a, i;
-            input = document.getElementById("myInput");
+            input = document.getElementById("telecommunicationInput");
             filter = input.value.toUpperCase();
-            div = document.getElementById("myDropdown");
+            div = document.getElementById("telecommunicationDropdown");
             a = div.getElementsByTagName("a");
             for (i = 0; i < a.length; i++) {
                 if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
