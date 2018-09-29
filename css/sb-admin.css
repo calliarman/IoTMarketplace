@@ -387,12 +387,25 @@ body.sidebar-toggled footer.sticky-footer {
 .app-box{
   text-align: center;
 }
-.app-box img{
-  margin-left: auto;
-	margin-right: auto;
-  display: block;
-  margin-left: 60px;
+
+@media (min-width: 1400px) {
+    .app-box img{
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		margin-left: 35%;
+	}
 }
+
+@media (max-width: 1400px) {
+    .app-box img{
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+		margin-left: 22%;
+	}
+}
+
 
 .dropbtn {
   background-color: #0FC373;
