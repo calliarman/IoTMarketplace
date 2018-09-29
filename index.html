@@ -14,13 +14,13 @@
     height: 25px;
   }
 
-  .water-icon{
-    background-image: url(images/water.jpg);
+  .utilities-icon{
+    background-image: url(images/utilities.jpg);
     height: 18px;
     background-repeat: no-repeat;
     background-size: contain;  }
 
-  .water-dropdown{
+  .utilities-dropdown{
     top:167px;
   }
 
@@ -28,7 +28,19 @@
     top:224px;
   }
 
-  .telecommunication-dropdown{
+  .automative-dropdown{
+      top:224px;
+  }
+
+  .agriculture-dropdown{
+      top:224px;
+  }
+
+  .manufactoring-dropdown{
+      top:224px;
+  }
+
+  .transportation-dropdown{
     top:280px;
   }
 
@@ -54,7 +66,7 @@
     z-index: 1;
   }
 
-  #waterInput {
+  #utilitiesInput {
     border-box: box-sizing;
     background-image: url('searchicon.png');
     background-position: 14px 12px;
@@ -65,7 +77,7 @@
     border-bottom: 1px solid #ddd;
   }
 
-  #waterInput:focus {outline: 3px solid #ddd;}
+  #utilitiesInput:focus {outline: 3px solid #ddd;}
 
   #electricityInput {
     border-box: box-sizing;
@@ -80,8 +92,33 @@
 
   #electricityInput:focus {outline: 3px solid #ddd;}
 
+  #automativeInput {
+      border-box: box-sizing;
+      background-image: url('searchicon.png');
+      background-position: 14px 12px;
+      background-repeat: no-repeat;
+      font-size: 16px;
+      padding: 14px 20px 18px 45px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+  }
 
-  #telecommunicationInput {
+  #automativeInput:focus {outline: 3px solid #ddd;}
+
+  #agricultureInput {
+      border-box: box-sizing;
+      background-image: url('searchicon.png');
+      background-position: 14px 12px;
+      background-repeat: no-repeat;
+      font-size: 16px;
+      padding: 14px 20px 18px 45px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+  }
+
+  #agricultureInput:focus {outline: 3px solid #ddd;}
+
+  #transportationInput {
     border-box: box-sizing;
     background-image: url('searchicon.png');
     background-position: 14px 12px;
@@ -92,7 +129,7 @@
     border-bottom: 1px solid #ddd;
   }
 
-  #telecommunicationInput:focus {outline: 3px solid #ddd;}
+  #transportationInput:focus {outline: 3px solid #ddd;}
 
   .dropdown {
     position: relative;
@@ -215,12 +252,12 @@
 
 
         <li class="nav-item active dropdown">
-          <button onclick="openWaterPanel()" class="nav-link dropbtn">
+          <button onclick="openUtilitiesPanel()" class="nav-link dropbtn">
 
-            <img class="sidebar-size" src="images/water.jpg">
+            <img class="sidebar-size" src="images/utilities.jpg">
 
 
-            <span>Water</span>
+            <span>Utilities</span>
 
           </button>
         </li>
@@ -241,17 +278,48 @@
           </button>
         </li>
 
-        <li class="nav-item active dropdown">
-          <button onclick="openTelecommunicationPanel()" class="nav-link dropbtn">
+          <li class="nav-item active dropdown">
+              <button onclick="openAutomativePanel()" class="nav-link dropbtn">
 
-            <img class="sidebar-size" src="images/telecommunication.jpg">
+
+                  <img class="sidebar-size" src="images/automative.jpg">
+
+                  <!--
+                              <img class="sidebar-size" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVGhD1dk7aBRhGIXh9YJ4BYUg4q3wUohgYyAINha2Whkbq4CQJiKCqJVYKagYCBbGQgQLRRJIE2wFmyhpAgYCwSLGC4qFiIp331MI8nMi7hQ7cw48XYrvZHd25v+m1YHcwy/jPdYiIjvwA67IRcTkOlyJT1iPiHRBA7sig4jJBbgSX7AZEVmBt3BFhhGTAbgS37AdEVmKWbgidxCTXrgS+hnejZhMwhUZQUwOwJWQvYjJA7gS44jJHvyEK7IfMbkNV+IhYrIVX+GKHERMrsKVeIyY6EzxAa7IYcTkHFyJKSxCRJbhJVyRfqxrU20nxuNwJaoaRcezGNNwA1WhJ+Nd6Hh0IbuBqrqJWvIIbqAqdCTehI5nH9xAVdW2UTmGG22agSvxDvrFisgaaGBX5DRichauxByWIyKrsdBGpQ8xOQNX4imWICKr8AauyCHERBeyK6F7UExW4jVckaij7ym4EmOIiXa/r1CW+I6oJd1JlCXkFmKiT8Mdtj5jC2JyAmUJuYxGZgO2FXZiHmUJfRrdKP9eb7VqzyWUA7dDy+5GvLnSf9gN+D/uQ3f9xuQZ3KAL0W5Y7xYbtya6Ajewo+PsUTQyPXBDl15AX8XGRl+R53DD//EEG9H4XIMrIHehG2RE9CRbFtBFfR4xu19FG8e/H0k+4ggiMwSV0PUS9dKzjN7mTiDiov5XtESoca3Tav0GlV6fG4Lh+IoAAAAASUVORK5CYII=">
+                  -->
+
+                  <span>Automative</span>
+
+              </button>
+          </li>
+
+
+          <li class="nav-item active dropdown">
+              <button onclick="openAgriculturePanel()" class="nav-link dropbtn">
+
+
+                  <img class="sidebar-size" src="images/agriculture.jpg">
+
+                  <!--
+                              <img class="sidebar-size" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVGhD1dk7aBRhGIXh9YJ4BYUg4q3wUohgYyAINha2Whkbq4CQJiKCqJVYKagYCBbGQgQLRRJIE2wFmyhpAgYCwSLGC4qFiIp331MI8nMi7hQ7cw48XYrvZHd25v+m1YHcwy/jPdYiIjvwA67IRcTkOlyJT1iPiHRBA7sig4jJBbgSX7AZEVmBt3BFhhGTAbgS37AdEVmKWbgidxCTXrgS+hnejZhMwhUZQUwOwJWQvYjJA7gS44jJHvyEK7IfMbkNV+IhYrIVX+GKHERMrsKVeIyY6EzxAa7IYcTkHFyJKSxCRJbhJVyRfqxrU20nxuNwJaoaRcezGNNwA1WhJ+Nd6Hh0IbuBqrqJWvIIbqAqdCTehI5nH9xAVdW2UTmGG22agSvxDvrFisgaaGBX5DRichauxByWIyKrsdBGpQ8xOQNX4imWICKr8AauyCHERBeyK6F7UExW4jVckaij7ym4EmOIiXa/r1CW+I6oJd1JlCXkFmKiT8Mdtj5jC2JyAmUJuYxGZgO2FXZiHmUJfRrdKP9eb7VqzyWUA7dDy+5GvLnSf9gN+D/uQ3f9xuQZ3KAL0W5Y7xYbtya6Ajewo+PsUTQyPXBDl15AX8XGRl+R53DD//EEG9H4XIMrIHehG2RE9CRbFtBFfR4xu19FG8e/H0k+4ggiMwSV0PUS9dKzjN7mTiDiov5XtESoca3Tav0GlV6fG4Lh+IoAAAAASUVORK5CYII=">
+                  -->
+
+                  <span>Agriculture</span>
+
+              </button>
+          </li>
+
+        <li class="nav-item active dropdown">
+          <button onclick="openTransportationPanel()" class="nav-link dropbtn">
+
+            <img class="sidebar-size" src="images/transportation.jpg">
 
 <!--
             <i class="sidebar-size fas fa-fw  fa fa-plane"></i>
 -->
 
 
-            <span>Telecommunication</span>
+            <span>Transportation</span>
 
           </button>
         </li>
@@ -353,8 +421,8 @@
 
         </div>
 
-        <div id="waterDropdown" class="dropdown-content water-dropdown">
-          <input type="text" placeholder="Water industry" id="waterInput" onkeyup="filterFunctionWater()">
+        <div id="utilitiesDropdown" class="dropdown-content utilities-dropdown">
+          <input type="text" placeholder="Utilities industry" id="utilitiesInput" onkeyup="filterFunctionUtilities()">
           <a href="#about">About</a>
           <a href="#base">Base</a>
           <a href="#blog">Blog</a>
@@ -376,9 +444,30 @@
           <a href="#tools">Tools</a>
         </div>
 
+          <div id="automativeDropdown" class="dropdown-content automative-dropdown">
+              <input type="text" placeholder="Automative industry" id="automativeInput" onkeyup="filterFunctionAutomative()">
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+          </div>
 
-        <div id="telecommunicationDropdown" class="dropdown-content telecommunication-dropdown">
-          <input type="text" placeholder="Telecommuniaction industry" id="telecommunicationInput" onkeyup="filterFunctionTelecommunication()">
+          <div id="agricultureDropdown" class="dropdown-content agriculture-dropdown">
+              <input type="text" placeholder="Agriculture industry" id="agricultureInput" onkeyup="filterFunctionAgriculture()">
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+          </div>
+
+        <div id="transportationDropdown" class="dropdown-content transportation-dropdown">
+          <input type="text" placeholder="Transportation industry" id="transportationInput" onkeyup="filterFunctionTransportation()">
           <a href="#about">About</a>
           <a href="#base">Base</a>
           <a href="#blog">Blog</a>
@@ -497,7 +586,7 @@
                     <div class="mr-5 app-box">
                       <img src="images/network_management_black.svg" style="width: 120px; height: 85px;" alt=""><br>
                       <a href="#" style="margin-left: 20px; color: #0082F0;">  Telecom Industries  </a>
-                      <p style="margin-left: 30px;">  Telecommunication </p>
+                      <p style="margin-left: 30px;">  Transportation </p>
                     </div>
                   </div>
                 </div>
@@ -694,31 +783,43 @@
         }
 
         function closeIndustryPanels() {
-            document.getElementById("waterDropdown").classList.remove("show");
+            document.getElementById("utilitiesDropdown").classList.remove("show");
             document.getElementById("electricityDropdown").classList.remove("show");
-            document.getElementById("telecommunicationDropdown").classList.remove("show");
+            document.getElementById("transportationDropdown").classList.remove("show");
+            document.getElementById("sutomativeDropdown").classList.remove("show");
+            document.getElementById("sgricultureDropdown").classList.remove("show");
+
+
             hideCloseLayer();
 
         }
 
-        function closeWaterPanel() {
-            document.getElementById("waterDropdown").classList.remove("show");
+        function closeUtilitiesPanel() {
+            document.getElementById("utilitiesDropdown").classList.remove("show");
         }
 
         function closeElectirictyPanel() {
             document.getElementById("electricityDropdown").classList.remove("show");
         }
 
-        function closeTelecommunicationPanel() {
-            document.getElementById("telecommunicationDropdown").classList.remove("show");
+        function closeAutomativePanel() {
+            document.getElementById("automativeDropdown").classList.remove("show");
         }
 
-        function openWaterPanel() {
-            closeElectirictyPanel();
-            closeTelecommunicationPanel();
-            document.getElementById("waterDropdown").classList.toggle("show");
+        function closeAgriculturePanel() {
+            document.getElementById("agricultureDropdown").classList.remove("show");
+        }
 
-            if($( "#waterDropdown" ).hasClass( "show" )){
+        function closeTransportationPanel() {
+            document.getElementById("transportationDropdown").classList.remove("show");
+        }
+
+        function openUtilitiesPanel() {
+            closeElectirictyPanel();
+            closeTransportationPanel();
+            document.getElementById("utilitiesDropdown").classList.toggle("show");
+
+            if($( "#utilitiesDropdown" ).hasClass( "show" )){
                 showCloseLayer();
             }else{
                 hideCloseLayer();
@@ -726,11 +827,11 @@
 
         }
 
-        function filterFunctionWater() {
+        function filterFunctionUtilities() {
             var input, filter, ul, li, a, i;
-            input = document.getElementById("waterInput");
+            input = document.getElementById("utilitiesInput");
             filter = input.value.toUpperCase();
-            div = document.getElementById("waterDropdown");
+            div = document.getElementById("utilitiesDropdown");
             a = div.getElementsByTagName("a");
             for (i = 0; i < a.length; i++) {
                 if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -743,11 +844,35 @@
 
 
         function openElectricityPanel() {
-            closeTelecommunicationPanel();
-            closeWaterPanel();
+            closeTransportationPanel();
+            closeUtilitiesPanel();
             document.getElementById("electricityDropdown").classList.toggle("show");
 
             if($( "#electricityDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+        }
+
+        function openAgriculturePanel() {
+            closeTransportationPanel();
+            closeUtilitiesPanel();
+            document.getElementById("agricultureDropdown").classList.toggle("show");
+
+            if($( "#agricultureDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+        }
+
+        function openAutomativePanel() {
+            closeTransportationPanel();
+            closeUtilitiesPanel();
+            document.getElementById("automativeDropdown").classList.toggle("show");
+
+            if($( "#automativeDropdown" ).hasClass( "show" )){
                 showCloseLayer();
             }else{
                 hideCloseLayer();
@@ -769,25 +894,54 @@
             }
         }
 
+        function filterFunctionAutomative() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("automativeInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("automativeDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
 
-        function openTelecommunicationPanel() {
+        function filterFunctionAgriculture() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("agricultureInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("agricultureDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function openTransportationPanel() {
             closeElectirictyPanel();
-            closeWaterPanel();
-            document.getElementById("telecommunicationDropdown").classList.toggle("show");
+            closeUtilitiesPanel();
+            document.getElementById("transportationDropdown").classList.toggle("show");
 
 
-            if($( "#telecommunicationDropdown" ).hasClass( "show" )){
+            if($( "#transportationDropdown" ).hasClass( "show" )){
                 showCloseLayer();
             }else{
                 hideCloseLayer();
             }
         }
 
-        function filterFunctionTelecommunication() {
+        function filterFunctionTransportation() {
             var input, filter, ul, li, a, i;
-            input = document.getElementById("telecommunicationInput");
+            input = document.getElementById("transportationInput");
             filter = input.value.toUpperCase();
-            div = document.getElementById("telecommunicationDropdown");
+            div = document.getElementById("transportationDropdown");
             a = div.getElementsByTagName("a");
             for (i = 0; i < a.length; i++) {
                 if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
