@@ -943,6 +943,23 @@
             }
         }
 
+
+        function openTransportationPanel() {
+            closeUtilitiesPanel();
+            closeElectirictyPanel();
+                closeAutomativePanel();
+            closeAgriculturePanel();
+            closeManufactoringPanel();
+            //closeTransportationPanel();
+            document.getElementById("transportationDropdown").classList.toggle("show");
+
+
+            if($( "#transportationDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+        }
         function filterFunctionElectricity() {
             var input, filter, ul, li, a, i;
             input = document.getElementById("electricityInput");
@@ -1004,18 +1021,7 @@
             }
         }
 
-        function openTransportationPanel() {
-            closeElectirictyPanel();
-            closeUtilitiesPanel();
-            document.getElementById("transportationDropdown").classList.toggle("show");
 
-
-            if($( "#transportationDropdown" ).hasClass( "show" )){
-                showCloseLayer();
-            }else{
-                hideCloseLayer();
-            }
-        }
 
         function filterFunctionTransportation() {
             var input, filter, ul, li, a, i;
