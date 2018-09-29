@@ -393,3 +393,12 @@ body.sidebar-toggled footer.sticky-footer {
   display: block;
   margin-left: 60px;
 }
+
+.dropbtn {
+  background-color: #0FC373;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
