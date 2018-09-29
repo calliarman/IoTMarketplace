@@ -29,7 +29,7 @@ body {
 
 @font-face {
   font-family: 'EricssonFont';
-  src: url('fonts/EricssonCapitalTT.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+  src: url('fonts/edsfont.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
 
 .project-title-text{
