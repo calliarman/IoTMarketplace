@@ -1,0 +1,10 @@
+1-)
+	C:\Windows\System32\drivers\etc'da hosts'un içinde son satıra
+	127.0.0.1       www.ericssoniot.com 'u ekle
+
+2-) 
+	Tomcat oluştur
+	C:\tomcat-iot\webapps\ROOT altına C:\Users\ehaalta\Desktop\Market place\IoTMarketplace içindeki html dosylarını yapıştır
+	Tomcati başlat
+	"www.ericssoniot.com:8080/login.html" git
+

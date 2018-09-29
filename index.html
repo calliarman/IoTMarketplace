@@ -4,6 +4,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
+
+  .water-dropdown{
+    top:167px;
+  }
+
+  .electricity-dropdown{
+    top:224px;
+  }
+
+  .telecommunication-dropdown{
+    top:280px;
+  }
+
   .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -17,13 +30,22 @@
     background-color: #3e8e41;
   }
 
+
+  #closeLayer{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    z-index: 1;
+  }
+
   #waterInput {
     border-box: box-sizing;
     background-image: url('searchicon.png');
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;
-    padding: 14px 20px 12px 45px;
+    padding: 14px 20px 18px 45px;
     border: none;
     border-bottom: 1px solid #ddd;
   }
@@ -36,7 +58,7 @@
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;
-    padding: 14px 20px 12px 45px;
+    padding: 14px 20px 18px 45px;
     border: none;
     border-bottom: 1px solid #ddd;
   }
@@ -44,18 +66,18 @@
   #electricityInput:focus {outline: 3px solid #ddd;}
 
 
-  #myInput {
+  #telecommunicationInput {
     border-box: box-sizing;
     background-image: url('searchicon.png');
     background-position: 14px 12px;
     background-repeat: no-repeat;
     font-size: 16px;
-    padding: 14px 20px 12px 45px;
+    padding: 14px 20px 18px 45px;
     border: none;
     border-bottom: 1px solid #ddd;
   }
 
-  #myInput:focus {outline: 3px solid #ddd;}
+  #telecommunicationInput:focus {outline: 3px solid #ddd;}
 
   .dropdown {
     position: relative;
@@ -81,7 +103,11 @@
 
   .dropdown a:hover {background-color: #ddd;}
 
+
   .show {display: block;}
+
+  .hidden {display: none;}
+
 </style>
 
   <head>
@@ -92,7 +118,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>IOT MARKETPLACE</title>
+    <title>IoT Marketplace</title>
 
     <!-- Bootstrap core CSS-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -177,13 +203,13 @@
         </li>
 
         <li class="nav-item active dropdown">
-          <button onclick="openGasPanel()" class="nav-link dropbtn">Gas</button>
+          <button onclick="openTelecommunicationPanel()" class="nav-link dropbtn">Telecommunication</button>
         </li>
       </ul>
 
       <div id="content-wrapper">
 
-          <div class="container-fluid">
+          <div class="container-fluid"></div>
 
              <!-- Breadcrumbs-->
       <ol class="breadcrumb">
@@ -211,7 +237,7 @@
             <div class="card-body">
                 <div class="mr-5 app-box">
                   <img src="images/industries_healthcare_black.svg" style=" width: 120px; height: 85px;" alt=""><br>
-                  <a href="#" style="margin-left: 30px; color: #0082F0;">  Smart Public Health </a>
+                  <a href="smartPublicHealth.html" style="margin-left: 30px; color: #0082F0;">  Smart Public Health </a>
                   <p style="margin-left: 30px;">  HealthCare </p>
                 </div>
               </div>
@@ -219,12 +245,13 @@
         <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
             <div class="card-body">
                 <div class="mr-5 app-box">
-                  <img src="images/Industries_manufacturing_2_black.svg" style=" width: 120px; height: 85px;" alt=""><br>
-                  <a href="#" style="margin-left: 30px; color: #0082F0;">  Smart Manufacturing  </a>
-                  <p style="margin-left: 30px;">  Manufacturing </p>
+                  <img src="images/iot_public_transport_black.svg" style=" width: 120px; height: 85px;" alt=""><br>
+                  <a href="cityTransportation.html" style="margin-left: 30px; color: #0082F0;">  City Transportation </a>
+                  <p style="margin-left: 30px;">  Public Transportation </p>
                 </div>
               </div>
         </div>
+        
         <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
             <div class="card-body">
                 <div class="mr-5 app-box">
@@ -238,7 +265,7 @@
             <div class="card-body">
                 <div class="mr-5 app-box">
                   <img src="images/green-energy.jpg" style=" width: 120px; height: 85px;" alt=""><br>
-                  <a href="#" style="margin-left: 30px; color: #0082F0;">  Green Energy Industry </a>
+                  <a href="GreenEnergy.html" style="margin-left: 30px; color: #0082F0;">  Green Energy Industry </a>
                   <p style="margin-left: 30px;">  Renewable </p>
                 </div>
               </div>
@@ -252,16 +279,16 @@
                 </div>
               </div>
         </div>
+       
         <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
             <div class="card-body">
                 <div class="mr-5 app-box">
-                  <img src="images/industries_retail_black.svg" style=" width: 120px; height: 85px;" alt=""><br>
-                  <a href="#" style="margin-left: 30px; color: #0082F0;">  Smart Retails  </a>
-                  <p style="margin-left: 30px;">  Retails </p>
+                  <img src="images/smart-cities.jpg" style="width: 120px; height: 85px;" alt=""><br>
+                  <a href="smartCities.html" style="margin-left: 30px; color: #0082F0;">  Smart Cities </a>
+                  <p style="margin-left: 30px;">  Cities </p>
                 </div>
               </div>
         </div>
-
         <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
             <div class="card-body">
                 <div class="mr-5 app-box">
@@ -272,9 +299,47 @@
               </div>
         </div>
 
-        
+        <div id="closeLayer" class="" onclick="closeIndustryPanels()">
 
-       
+        </div>
+
+        <div id="waterDropdown" class="dropdown-content water-dropdown">
+          <input type="text" placeholder="Water industry" id="waterInput" onkeyup="filterFunctionWater()">
+          <a href="#about">About</a>
+          <a href="#base">Base</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#custom">Custom</a>
+          <a href="#support">Support</a>
+          <a href="#tools">Tools</a>
+        </div>
+
+
+        <div id="electricityDropdown" class="dropdown-content electricity-dropdown">
+          <input type="text" placeholder="Electricity industry" id="electricityInput" onkeyup="filterFunctionElectricity()">
+          <a href="#about">About</a>
+          <a href="#base">Base</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#custom">Custom</a>
+          <a href="#support">Support</a>
+          <a href="#tools">Tools</a>
+        </div>
+
+
+        <div id="telecommunicationDropdown" class="dropdown-content telecommunication-dropdown">
+          <input type="text" placeholder="Telecommuniaction industry" id="telecommunicationInput" onkeyup="filterFunctionTelecommunication()">
+          <a href="#about">About</a>
+          <a href="#base">Base</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+          <a href="#custom">Custom</a>
+          <a href="#support">Support</a>
+          <a href="#tools">Tools</a>
+        </div>
+
+
+        
       </div>
 
       <ol class="breadcrumb">
@@ -285,6 +350,16 @@
         </ol>
 
         <div class="row">
+            <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
+          
+                <div class="card-body">
+                  <div class="mr-5 app-box">
+                    <img src="images/iot_shipping_black.svg" style="width: 120px; height: 85px;" alt=""><br>
+                    <a href="SmartShipping.html" style="margin-left: 20px; color: #0082F0;">  Shipping Industries  </a>
+                    <p style="margin-left: 30px;">  Shipping </p>
+                  </div>
+                </div>
+              </div>
             <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
                 <div class="card-body">
                     <div class="mr-5 app-box">
@@ -308,20 +383,20 @@
                 <div class="card-body">
                     <div class="mr-5 app-box">
                       <img src="images/iot_quadcopter_black.svg" style=" width: 120px; height: 85px;" alt=""><br>
-                      <a href="#" style="margin-left: 30px; color: #0082F0;">  Drone Transportation </a>
+                      <a href="DroneTransportation.html" style="margin-left: 30px; color: #0082F0;">  Drone Transportation </a>
                       <p style="margin-left: 30px;">  Quadcopters </p>
                     </div>
                   </div>
             </div>
             <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
-              <div class="card-body">
-                  <div class="mr-5 app-box">
-                    <img src="images/smart-cities.jpg" style="width: 120px; height: 85px;" alt=""><br>
-                    <a href="#" style="margin-left: 30px; color: #0082F0;">  Smart Cities </a>
-                    <p style="margin-left: 30px;">  Cities </p>
+                <div class="card-body">
+                    <div class="mr-5 app-box">
+                      <img src="images/industries_retail_black.svg" style=" width: 120px; height: 85px;" alt=""><br>
+                      <a href="#" style="margin-left: 30px; color: #0082F0;">  Smart Retails  </a>
+                      <p style="margin-left: 30px;">  Retails </p>
+                    </div>
                   </div>
-                </div>
-          </div>
+            </div>
             <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
                 <div class="card-body">
                     <div class="mr-5 app-box">
@@ -331,16 +406,9 @@
                     </div>
                   </div>
             </div>
-            <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
-          
-                <div class="card-body">
-                  <div class="mr-5 app-box">
-                    <img src="images/iot_shipping_black.svg" style="width: 120px; height: 85px;" alt=""><br>
-                    <a href="#" style="margin-left: 20px; color: #0082F0;">  Shipping Industries  </a>
-                    <p style="margin-left: 30px;">  Shipping </p>
-                  </div>
-                </div>
-              </div>
+            
+
+
              <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
             <div class="card-body">
                 <div class="mr-5 app-box">
@@ -349,18 +417,19 @@
                   <p style="margin-left: 30px;">  Meteorology </p>
                 </div>
               </div>
-        </div>
+       
+            </div>
        
           
-        <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
-          <div class="card-body">
-              <div class="mr-5 app-box">
-                <img src="images/iot_public_transport_black.svg" style=" width: 120px; height: 85px;" alt=""><br>
-                <a href="#" style="margin-left: 30px; color: #0082F0;">  City Transportation </a>
-                <p style="margin-left: 30px;">  Public Transportation </p>
-              </div>
+            <div class="col-xl-3 col-sm-6 mb-3" style="max-width: 40%; max-height: 40%;">
+                <div class="card-body">
+                    <div class="mr-5 app-box">
+                      <img src="images/Industries_manufacturing_2_black.svg" style=" width: 120px; height: 85px;" alt=""><br>
+                      <a href="#" style="margin-left: 30px; color: #0082F0;">  Smart Manufacturing  </a>
+                      <p style="margin-left: 30px;">  Manufacturing </p>
+                    </div>
+                  </div>
             </div>
-      </div>
 
         </div>
 
@@ -406,7 +475,7 @@
                       <div class="card-body">
                           <div class="mr-5 app-box">
                             <img src="images/iot_quadcopter_black.svg" style=" width: 120px; height: 85px;" alt=""><br>
-                            <a href="#" style="margin-left: 30px; color: #0082F0;">  Drone Transportation </a>
+                            <a href="DroneTransportation.html" style="margin-left: 30px; color: #0082F0;">  Drone Transportation </a>
                             <p style="margin-left: 30px;">  Quadcopters </p>
                           </div>
                         </div>
@@ -562,9 +631,49 @@
         toggle between hiding and showing the dropdown content */
 
 
+        function showCloseLayer() {
+            document.getElementById("closeLayer").classList.add("show");
+            document.getElementById("closeLayer").classList.remove("hidden");
+
+        }
+
+        function hideCloseLayer() {
+            document.getElementById("closeLayer").classList.remove("show");
+            document.getElementById("closeLayer").classList.add("hidden");
+
+        }
+
+        function closeIndustryPanels() {
+            document.getElementById("waterDropdown").classList.remove("show");
+            document.getElementById("electricityDropdown").classList.remove("show");
+            document.getElementById("telecommunicationDropdown").classList.remove("show");
+            hideCloseLayer();
+
+        }
+
+        function closeWaterPanel() {
+            document.getElementById("waterDropdown").classList.remove("show");
+        }
+
+        function closeElectirictyPanel() {
+            document.getElementById("electricityDropdown").classList.remove("show");
+        }
+
+        function closeTelecommunicationPanel() {
+            document.getElementById("telecommunicationDropdown").classList.remove("show");
+        }
 
         function openWaterPanel() {
+            closeElectirictyPanel();
+            closeTelecommunicationPanel();
             document.getElementById("waterDropdown").classList.toggle("show");
+
+            if($( "#waterDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+
         }
 
         function filterFunctionWater() {
@@ -584,7 +693,15 @@
 
 
         function openElectricityPanel() {
+            closeTelecommunicationPanel();
+            closeWaterPanel();
             document.getElementById("electricityDropdown").classList.toggle("show");
+
+            if($( "#electricityDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
         }
 
         function filterFunctionElectricity() {
@@ -603,15 +720,24 @@
         }
 
 
-        function openGasPanel() {
-            document.getElementById("myDropdown").classList.toggle("show");
+        function openTelecommunicationPanel() {
+            closeElectirictyPanel();
+            closeWaterPanel();
+            document.getElementById("telecommunicationDropdown").classList.toggle("show");
+
+
+            if($( "#telecommunicationDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
         }
 
-        function filterFunctionGas() {
+        function filterFunctionTelecommunication() {
             var input, filter, ul, li, a, i;
-            input = document.getElementById("myInput");
+            input = document.getElementById("telecommunicationInput");
             filter = input.value.toUpperCase();
-            div = document.getElementById("myDropdown");
+            div = document.getElementById("telecommunicationDropdown");
             a = div.getElementsByTagName("a");
             for (i = 0; i < a.length; i++) {
                 if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
