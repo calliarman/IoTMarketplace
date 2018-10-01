@@ -20,7 +20,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [342, 1233, 3456, 7453, 10233, 15343, 18232, 21023, 24923, 39233, 45233, 50021, 75343],
+      data: [34, 123, 345, 745, 1023, 1534, 1823, 2102, 2492, 3923, 4523, 5002, 7534],
     }],
   },
   options: {
@@ -39,7 +39,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 100000,
+          max: 10000,
           maxTicksLimit: 5
         },
         gridLines: {
