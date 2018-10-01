@@ -1,6 +1,6 @@
-1. City Transportation
-2. Drone Transportation
-3. Smart Public Health
-4. Smart Shipping
-5. Green Energy Industry
-6. Smart Cities 
+1. Transportation > DHL > City Transportation
+2. Transportation > DHL > Drone Transportation
+3. Home Page > Smart Public Health
+4. Home Page > Smart Shipping
+5. Utilities > Gediz > Green Energy Industry
+6. Utilities > Gediz > Smart Cities
