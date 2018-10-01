@@ -5,6 +5,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="css/generic.css" rel="stylesheet">
 
 
 <style>
@@ -74,6 +75,7 @@
     position: absolute;
     z-index: 1;
   }
+  
 
   #utilitiesInput {
     
@@ -84,22 +86,10 @@
     padding: 14px 20px 18px 45px;
     border: none;
     border-bottom: 1px solid #ddd;
+      background-color: #3e8e41;
+
+
   }
-
-  #utilitiesInput:focus {outline: 3px solid #ddd;}
-
-  #electricityInput {
-    
-    background-image: url('searchicon.png');
-    background-position: 14px 12px;
-    background-repeat: no-repeat;
-    font-size: 16px;
-    padding: 14px 20px 18px 45px;
-    border: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  #electricityInput:focus {outline: 3px solid #ddd;}
 
   #automativeInput {
       
@@ -367,7 +357,7 @@
           </div>
 
           <div id="utilitiesDropdown" class="dropdown-content utilities-dropdown">
-              <input type="text" placeholder="Utilities industry" id="utilitiesInput" onkeyup="filterFunctionUtilities()">
+              <input type="text" placeholder="Utilities" id="utilitiesInput" onkeyup="filterFunctionUtilities()">
               <a href="gediz.html">Gediz</a>
               <a href="#base">Iski</a>
               <a href="#blog">Izsu</a>
@@ -377,7 +367,7 @@
               <a href="#tools">Deski</a>
           </div>
           <div id="electricityDropdown" class="dropdown-content electricity-dropdown">
-              <input type="text" placeholder="Electricity industry" id="electricityInput" onkeyup="filterFunctionElectricity()">
+              <input type="text" placeholder="Electricity" id="electricityInput" onkeyup="filterFunctionElectricity()">
               <a href="#about">About</a>
               <a href="#base">Base</a>
               <a href="#blog">Blog</a>
@@ -387,7 +377,7 @@
               <a href="#tools">Tools</a>
           </div>
           <div id="automativeDropdown" class="dropdown-content automative-dropdown">
-              <input type="text" placeholder="Automative industry" id="automativeInput" onkeyup="filterFunctionAutomative()">
+              <input type="text" placeholder="Automative" id="automativeInput" onkeyup="filterFunctionAutomative()">
               <a href="#about">Audi</a>
               <a href="#base">Renault</a>
               <a href="#blog">Bmw</a>
@@ -397,7 +387,7 @@
               <a href="#tools">Porsche</a>
           </div>
           <div id="agricultureDropdown" class="dropdown-content agriculture-dropdown">
-              <input type="text" placeholder="Agriculture industry" id="agricultureInput" onkeyup="filterFunctionAgriculture()">
+              <input type="text" placeholder="Agriculture" id="agricultureInput" onkeyup="filterFunctionAgriculture()">
               <a href="#about">Etko</a>
               <a href="#base">Tarsa</a>
               <a href="#blog">Torku</a>
@@ -407,7 +397,7 @@
               <a href="#tools">Bunge</a>
           </div>
           <div id="manufactoringDropdown" class="dropdown-content manufactoring-dropdown">
-              <input type="text" placeholder="Manufactoring industry" id="manufactoringInput" onkeyup="filterFunctionManufactoring()">
+              <input type="text" placeholder="Manufactoring" id="manufactoringInput" onkeyup="filterFunctionManufactoring()">
               <a href="#about">Flavourtech</a>
               <a href="#base">Honeywell</a>
               <a href="#blog">Flexlink</a>
@@ -417,7 +407,7 @@
               <a href="#tools">Felda</a>
           </div>
           <div id="transportationDropdown" class="dropdown-content transportation-dropdown">
-              <input type="text" placeholder="Transportation industry" id="transportationInput" onkeyup="filterFunctionTransportation()">
+              <input type="text" placeholder="Transportation" id="transportationInput" onkeyup="filterFunctionTransportation()">
               <a href="#about">Thy</a>
               <a href="#base">Origin</a>
               <a href="#blog">UnitedArabShipping</a>
