@@ -359,6 +359,72 @@
 
     <div id="content-wrapper">
 
+
+        <div id="closeLayer" class="hidden" onclick="closeIndustryPanels()">
+
+        </div>
+
+        <div id="utilitiesDropdown" class="dropdown-content utilities-dropdown">
+            <input type="text" placeholder="Utilities" id="utilitiesInput" onkeyup="filterFunctionUtilities()">
+            <a href="gediz.html">Gediz</a>
+            <a href="gediz.html">Turkcell</a>
+            <a href="#base">Iski</a>
+            <a href="#blog">Izsu</a>
+            <a href="#contact">Tedas</a>
+            <a href="#custom">Medas</a>
+            <a href="#support">Adm</a>
+            <a href="#tools">Deski</a>
+        </div>
+        <div id="electricityDropdown" class="dropdown-content electricity-dropdown">
+            <input type="text" placeholder="Electricity" id="electricityInput" onkeyup="filterFunctionElectricity()">
+            <a href="#about">About</a>
+            <a href="#base">Base</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+            <a href="#custom">Custom</a>
+            <a href="#support">Support</a>
+            <a href="#tools">Tools</a>
+        </div>
+        <div id="automativeDropdown" class="dropdown-content automative-dropdown">
+            <input type="text" placeholder="Automative" id="automativeInput" onkeyup="filterFunctionAutomative()">
+            <a href="#about">Audi</a>
+            <a href="#base">Renault</a>
+            <a href="#blog">Bmw</a>
+            <a href="#contact">Wolksvagen</a>
+            <a href="#custom">Fiat</a>
+            <a href="#support">Mercedes</a>
+            <a href="#tools">Porsche</a>
+        </div>
+        <div id="agricultureDropdown" class="dropdown-content agriculture-dropdown">
+            <input type="text" placeholder="Agriculture" id="agricultureInput" onkeyup="filterFunctionAgriculture()">
+            <a href="#about">Etko</a>
+            <a href="#base">Tarsa</a>
+            <a href="#blog">Torku</a>
+            <a href="#contact">Orion</a>
+            <a href="#custom">Atlas</a>
+            <a href="#support">Adm</a>
+            <a href="#tools">Bunge</a>
+        </div>
+        <div id="manufactoringDropdown" class="dropdown-content manufactoring-dropdown">
+            <input type="text" placeholder="Manufactoring" id="manufactoringInput" onkeyup="filterFunctionManufactoring()">
+            <a href="#about">Flavourtech</a>
+            <a href="#base">Honeywell</a>
+            <a href="#blog">Flexlink</a>
+            <a href="#contact">Orimpex</a>
+            <a href="#custom">Gaspara</a>
+            <a href="#support">RigaWood</a>
+            <a href="#tools">Felda</a>
+        </div>
+        <div id="transportationDropdown" class="dropdown-content transportation-dropdown">
+            <input type="text" placeholder="Transportation" id="transportationInput" onkeyup="filterFunctionTransportation()">
+            <a href="#about">Thy</a>
+            <a href="#base">Origin</a>
+            <a href="#blog">UnitedArabShipping</a>
+            <a href="#contact">Omega</a>
+            <a href="#custom">Catoni</a>
+            <a href="#support">Compass</a>
+            <a href="dhl.html">Dhl</a>
+        </div>
         <div class="container-fluid"></div>
 
         <!-- Breadcrumbs-->
@@ -408,73 +474,6 @@
             <div class="" onclick="closeIndustryPanels()">
 
             </div>
-
-            <div id="utilitiesDropdown" class="dropdown-content utilities-dropdown">
-                <input type="text" placeholder="Utilities industry" id="utilitiesInput" onkeyup="filterFunctionUtilities()">
-                <a href="gediz.html">Gediz</a>
-                <a href="gediz.html">Turkcell</a>
-                <a href="#base">Iski</a>
-                <a href="#blog">Izsu</a>
-                <a href="#contact">Tedas</a>
-                <a href="#custom">Medas</a>
-                <a href="#support">Adm</a>
-                <a href="#tools">Deski</a>
-            </div>
-
-            <div id="electricityDropdown" class="dropdown-content electricity-dropdown">
-                <input type="text" placeholder="Electricity industry" id="electricityInput" onkeyup="filterFunctionElectricity()">
-                <a href="#about">About</a>
-                <a href="#base">Base</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contact</a>
-                <a href="#custom">Custom</a>
-                <a href="#support">Support</a>
-                <a href="#tools">Tools</a>
-            </div>
-            <div id="automativeDropdown" class="dropdown-content automative-dropdown">
-                <input type="text" placeholder="Automative industry" id="automativeInput" onkeyup="filterFunctionAutomative()">
-                <a href="#about">Audi</a>
-                <a href="#base">Renault</a>
-                <a href="#blog">Bmw</a>
-                <a href="#contact">Wolksvagen</a>
-                <a href="#custom">Fiat</a>
-                <a href="#support">Mercedes</a>
-                <a href="#tools">Porsche</a>
-            </div>
-
-            <div id="agricultureDropdown" class="dropdown-content agriculture-dropdown">
-                <input type="text" placeholder="Agriculture industry" id="agricultureInput" onkeyup="filterFunctionAgriculture()">
-                <a href="#about">Etko</a>
-                <a href="#base">Tarsa</a>
-                <a href="#blog">Torku</a>
-                <a href="#contact">Orion</a>
-                <a href="#custom">Atlas</a>
-                <a href="#support">Adm</a>
-                <a href="#tools">Bunge</a>
-            </div>
-
-            <div id="manufactoringDropdown" class="dropdown-content manufactoring-dropdown">
-                <input type="text" placeholder="Manufactoring industry" id="manufactoringInput" onkeyup="filterFunctionManufactoring()">
-                <a href="#about">Flavourtech</a>
-                <a href="#base">Honeywell</a>
-                <a href="#blog">Flexlink</a>
-                <a href="#contact">Orimpex</a>
-                <a href="#custom">Gaspara</a>
-                <a href="#support">RigaWood</a>
-                <a href="#tools">Felda</a>
-            </div>
-
-            <div id="transportationDropdown" class="dropdown-content transportation-dropdown">
-                <input type="text" placeholder="Transportation industry" id="transportationInput" onkeyup="filterFunctionTransportation()">
-                <a href="#about">Thy</a>
-                <a href="#base">Origin</a>
-                <a href="#blog">UnitedArabShipping</a>
-                <a href="#contact">Omega</a>
-                <a href="#custom">Catoni</a>
-                <a href="#support">Compass</a>
-                <a href="dhl.html">Dhl</a>
-            </div>
-
 
 
         </div>
