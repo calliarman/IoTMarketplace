@@ -5,8 +5,24 @@
 #transportationInput::placeholder {color: white;}
 
 
-#utilitiesInput{    background-color: #0c9b5b;}
+/*#utilitiesInput{    background-color: #0c9b5b;}
 #automativeInput{    background-color: #0c9b5b;}
 #agricultureInput{    background-color: #0c9b5b;}
 #manufactoringInput{    background-color: #0c9b5b;}
-#transportationInput{    background-color: #0c9b5b;}
+#transportationInput{    background-color: #0c9b5b;}*/
+
+
+#utilitiesInput{    background-color: #3e8e41;}
+#automativeInput{    background-color: #3e8e41;}
+#agricultureInput{    background-color: #3e8e41;}
+#manufactoringInput{    background-color: #3e8e41;}
+#transportationInput{    background-color: #3e8e41;}
+
+
+
+#launchButton{
+    display: block;
+    margin: auto;
+    width: 40%;
+    margin-top: 30px;
+}
