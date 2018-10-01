@@ -1,5 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+
+  .sidebar-size{
+    width: 25px;
+    height: 25px;
+  }
+
+  .utilities-icon{
+    background-image: url(images/utilities.jpg);
+    height: 18px;
+    background-repeat: no-repeat;
+    background-size: contain;  }
+
+  .dropdown-item-small{
+      left: 90px !important;
+  }
+
+  .utilities-dropdown{
+      top: 173px;
+      left: 225px;
+  }
+
+  .electricity-dropdown{
+    top:224px;
+  }
+
+  .automative-dropdown{
+      top: 232px;
+      left: 225px;
+  }
+
+  .agriculture-dropdown{
+      top: 290px;
+      left: 225px;
+  }
+
+  .manufactoring-dropdown{
+      top: 349px;
+      left: 225px;
+  }
+
+  .transportation-dropdown{
+      top: 407px;
+      left: 225px;
+  }
+
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+  }
+
+
+  #closeLayer{
+    width: 100%;
+      height: 90%;
+    background: transparent;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #utilitiesInput {
+    
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 18px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #utilitiesInput:focus {outline: 3px solid #ddd;}
+
+  #electricityInput {
+    
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 18px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #electricityInput:focus {outline: 3px solid #ddd;}
+
+  #automativeInput {
+      
+      background-image: url('searchicon.png');
+      background-position: 14px 12px;
+      background-repeat: no-repeat;
+      font-size: 16px;
+      padding: 14px 20px 18px 45px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+  }
+
+  #automativeInput:focus {outline: 3px solid #ddd;}
+
+  #agricultureInput {
+      
+      background-image: url('searchicon.png');
+      background-position: 14px 12px;
+      background-repeat: no-repeat;
+      font-size: 16px;
+      padding: 14px 20px 18px 45px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+  }
+
+  #agricultureInput:focus {outline: 3px solid #ddd;}
+
+  #manufactoringInput {
+      border-box: box-sizing;
+      background-image: url('searchicon.png');
+      background-position: 14px 12px;
+      background-repeat: no-repeat;
+      font-size: 16px;
+      padding: 14px 20px 18px 45px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+  }
+
+  #manufactoringInput:focus {outline: 3px solid #ddd;}
+
+  #transportationInput {
+    
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 18px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #transportationInput:focus {outline: 3px solid #ddd;}
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0fc373;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 2;
+  }
+
+  .dropdown-content a {
+    color: white    ;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown a:hover {background-color: #ddd;}
+
+
+  .show {display: block;}
+
+  .hidden {display: none;}
+
+
+
+</style>
+
 
   <head>
 
@@ -23,6 +202,7 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/appdetails.css" rel="stylesheet">
+	<link href="css/generic.css" rel="stylesheet">
  
   </head>
 
@@ -69,17 +249,181 @@
     <div id="wrapper">
 
       <!-- Sidebar -->
-      <ul class="sidebar navbar-nav">
+           <ul class="sidebar navbar-nav">
         <li class="nav-item active">
           <a class="nav-link" href="index.html">
-            <img class="sidebar-size" src="images/iot_smart_cities_black.png">
+              <img class="sidebar-size" src="images/iot_smart_cities_black.png">
             <span>Home Page</span>
           </a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="myapps.html">
+             <img class="sidebar-size" src="images/software_network_black.png">
+            <span>My Apps</span>
+          </a>
+        </li>
+        <li class="nav-item active dropdown">
+          <button onclick="openUtilitiesPanel()" class="nav-link dropbtn">
 
+            <img class="sidebar-size" src="images/industries_utilities_black.png">
+
+
+            <span>Utilities</span>
+
+          </button>
+        </li>
+        <!--<li class="nav-item active dropdown">
+          <button onclick="openElectricityPanel()" class="nav-link dropbtn">
+            <img class="sidebar-size" src="images/electricity.png">
+            <span>Electricity</span>
+          </button>
+        </li>-->
+          <li class="nav-item active dropdown">
+              <button onclick="openAutomativePanel()" class="nav-link dropbtn">
+
+
+                  <img class="sidebar-size" src="images/industries_automotive_black.png">
+
+                  <!--
+                              <img class="sidebar-size" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVGhD1dk7aBRhGIXh9YJ4BYUg4q3wUohgYyAINha2Whkbq4CQJiKCqJVYKagYCBbGQgQLRRJIE2wFmyhpAgYCwSLGC4qFiIp331MI8nMi7hQ7cw48XYrvZHd25v+m1YHcwy/jPdYiIjvwA67IRcTkOlyJT1iPiHRBA7sig4jJBbgSX7AZEVmBt3BFhhGTAbgS37AdEVmKWbgidxCTXrgS+hnejZhMwhUZQUwOwJWQvYjJA7gS44jJHvyEK7IfMbkNV+IhYrIVX+GKHERMrsKVeIyY6EzxAa7IYcTkHFyJKSxCRJbhJVyRfqxrU20nxuNwJaoaRcezGNNwA1WhJ+Nd6Hh0IbuBqrqJWvIIbqAqdCTehI5nH9xAVdW2UTmGG22agSvxDvrFisgaaGBX5DRichauxByWIyKrsdBGpQ8xOQNX4imWICKr8AauyCHERBeyK6F7UExW4jVckaij7ym4EmOIiXa/r1CW+I6oJd1JlCXkFmKiT8Mdtj5jC2JyAmUJuYxGZgO2FXZiHmUJfRrdKP9eb7VqzyWUA7dDy+5GvLnSf9gN+D/uQ3f9xuQZ3KAL0W5Y7xYbtya6Ajewo+PsUTQyPXBDl15AX8XGRl+R53DD//EEG9H4XIMrIHehG2RE9CRbFtBFfR4xu19FG8e/H0k+4ggiMwSV0PUS9dKzjN7mTiDiov5XtESoca3Tav0GlV6fG4Lh+IoAAAAASUVORK5CYII=">
+                  -->
+
+                  <span>Automative</span>
+
+              </button>
+          </li>
+
+
+          <li class="nav-item active dropdown">
+              <button onclick="openAgriculturePanel()" class="nav-link dropbtn">
+
+
+                  <img class="sidebar-size" src="images/industries_agriculture_black.png">
+
+                  <!--
+                              <img class="sidebar-size" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVGhD1dk7aBRhGIXh9YJ4BYUg4q3wUohgYyAINha2Whkbq4CQJiKCqJVYKagYCBbGQgQLRRJIE2wFmyhpAgYCwSLGC4qFiIp331MI8nMi7hQ7cw48XYrvZHd25v+m1YHcwy/jPdYiIjvwA67IRcTkOlyJT1iPiHRBA7sig4jJBbgSX7AZEVmBt3BFhhGTAbgS37AdEVmKWbgidxCTXrgS+hnejZhMwhUZQUwOwJWQvYjJA7gS44jJHvyEK7IfMbkNV+IhYrIVX+GKHERMrsKVeIyY6EzxAa7IYcTkHFyJKSxCRJbhJVyRfqxrU20nxuNwJaoaRcezGNNwA1WhJ+Nd6Hh0IbuBqrqJWvIIbqAqdCTehI5nH9xAVdW2UTmGG22agSvxDvrFisgaaGBX5DRichauxByWIyKrsdBGpQ8xOQNX4imWICKr8AauyCHERBeyK6F7UExW4jVckaij7ym4EmOIiXa/r1CW+I6oJd1JlCXkFmKiT8Mdtj5jC2JyAmUJuYxGZgO2FXZiHmUJfRrdKP9eb7VqzyWUA7dDy+5GvLnSf9gN+D/uQ3f9xuQZ3KAL0W5Y7xYbtya6Ajewo+PsUTQyPXBDl15AX8XGRl+R53DD//EEG9H4XIMrIHehG2RE9CRbFtBFfR4xu19FG8e/H0k+4ggiMwSV0PUS9dKzjN7mTiDiov5XtESoca3Tav0GlV6fG4Lh+IoAAAAASUVORK5CYII=">
+                  -->
+
+                  <span>Agriculture</span>
+
+              </button>
+          </li>
+
+
+          <li class="nav-item active dropdown">
+              <button onclick="openManufactoringPanel()" class="nav-link dropbtn">
+
+
+                  <img class="sidebar-size" src="images/Industries_manufacturing_2_black.png">
+
+                  <!--
+                              <img class="sidebar-size" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAITSURBVGhD1dk7aBRhGIXh9YJ4BYUg4q3wUohgYyAINha2Whkbq4CQJiKCqJVYKagYCBbGQgQLRRJIE2wFmyhpAgYCwSLGC4qFiIp331MI8nMi7hQ7cw48XYrvZHd25v+m1YHcwy/jPdYiIjvwA67IRcTkOlyJT1iPiHRBA7sig4jJBbgSX7AZEVmBt3BFhhGTAbgS37AdEVmKWbgidxCTXrgS+hnejZhMwhUZQUwOwJWQvYjJA7gS44jJHvyEK7IfMbkNV+IhYrIVX+GKHERMrsKVeIyY6EzxAa7IYcTkHFyJKSxCRJbhJVyRfqxrU20nxuNwJaoaRcezGNNwA1WhJ+Nd6Hh0IbuBqrqJWvIIbqAqdCTehI5nH9xAVdW2UTmGG22agSvxDvrFisgaaGBX5DRichauxByWIyKrsdBGpQ8xOQNX4imWICKr8AauyCHERBeyK6F7UExW4jVckaij7ym4EmOIiXa/r1CW+I6oJd1JlCXkFmKiT8Mdtj5jC2JyAmUJuYxGZgO2FXZiHmUJfRrdKP9eb7VqzyWUA7dDy+5GvLnSf9gN+D/uQ3f9xuQZ3KAL0W5Y7xYbtya6Ajewo+PsUTQyPXBDl15AX8XGRl+R53DD//EEG9H4XIMrIHehG2RE9CRbFtBFfR4xu19FG8e/H0k+4ggiMwSV0PUS9dKzjN7mTiDiov5XtESoca3Tav0GlV6fG4Lh+IoAAAAASUVORK5CYII=">
+                  -->
+
+                  <span>Manufactoring</span>
+
+              </button>
+          </li>
+
+          <li class="nav-item active dropdown">
+          <button onclick="openTransportationPanel()" class="nav-link dropbtn">
+
+            <img class="sidebar-size" src="images/iot_public_transport_black.png">
+
+<!--
+            <i class="sidebar-size fas fa-fw  fa fa-plane"></i>
+-->
+
+
+            <span>Transportation</span>
+
+          </button>
+        </li>
+
+
+
+
+          <li class="nav-item">
+              <a class="nav-link" href="charts.html">
+                  <i class="fas fa-fw fa-chart-area"></i>
+                  <span>Charts</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="tables.html">
+                  <i class="fas fa-fw fa-table"></i>
+                  <span>Tables</span></a>
+          </li>
+      
       </ul>
 
       <div id="content-wrapper">
+
+          <div id="closeLayer" class="" onclick="closeIndustryPanels()">
+
+          </div>
+
+          <div id="utilitiesDropdown" class="dropdown-content utilities-dropdown">
+              <input type="text" placeholder="Utilities industry" id="utilitiesInput" onkeyup="filterFunctionUtilities()">
+              <a href="gediz.html">Gediz</a>
+              <a href="#base">Iski</a>
+              <a href="#blog">Izsu</a>
+              <a href="#contact">Tedas</a>
+              <a href="#custom">Medas</a>
+              <a href="#support">Adm</a>
+              <a href="#tools">Deski</a>
+          </div>
+          <div id="electricityDropdown" class="dropdown-content electricity-dropdown">
+              <input type="text" placeholder="Electricity industry" id="electricityInput" onkeyup="filterFunctionElectricity()">
+              <a href="#about">About</a>
+              <a href="#base">Base</a>
+              <a href="#blog">Blog</a>
+              <a href="#contact">Contact</a>
+              <a href="#custom">Custom</a>
+              <a href="#support">Support</a>
+              <a href="#tools">Tools</a>
+          </div>
+          <div id="automativeDropdown" class="dropdown-content automative-dropdown">
+              <input type="text" placeholder="Automative industry" id="automativeInput" onkeyup="filterFunctionAutomative()">
+              <a href="#about">Audi</a>
+              <a href="#base">Renault</a>
+              <a href="#blog">Bmw</a>
+              <a href="#contact">Wolksvagen</a>
+              <a href="#custom">Fiat</a>
+              <a href="#support">Mercedes</a>
+              <a href="#tools">Porsche</a>
+          </div>
+          <div id="agricultureDropdown" class="dropdown-content agriculture-dropdown">
+              <input type="text" placeholder="Agriculture industry" id="agricultureInput" onkeyup="filterFunctionAgriculture()">
+              <a href="#about">Etko</a>
+              <a href="#base">Tarsa</a>
+              <a href="#blog">Torku</a>
+              <a href="#contact">Orion</a>
+              <a href="#custom">Atlas</a>
+              <a href="#support">Adm</a>
+              <a href="#tools">Bunge</a>
+          </div>
+          <div id="manufactoringDropdown" class="dropdown-content manufactoring-dropdown">
+              <input type="text" placeholder="Manufactoring industry" id="manufactoringInput" onkeyup="filterFunctionManufactoring()">
+              <a href="#about">Flavourtech</a>
+              <a href="#base">Honeywell</a>
+              <a href="#blog">Flexlink</a>
+              <a href="#contact">Orimpex</a>
+              <a href="#custom">Gaspara</a>
+              <a href="#support">RigaWood</a>
+              <a href="#tools">Felda</a>
+          </div>
+          <div id="transportationDropdown" class="dropdown-content transportation-dropdown">
+              <input type="text" placeholder="Transportation industry" id="transportationInput" onkeyup="filterFunctionTransportation()">
+              <a href="#about">Thy</a>
+              <a href="#base">Origin</a>
+              <a href="#blog">UnitedArabShipping</a>
+              <a href="#contact">Omega</a>
+              <a href="#custom">Catoni</a>
+              <a href="#support">Compass</a>
+              <a href="dhl.html">Dhl</a>
+          </div>
+
+          <div class="container-fluid"></div>
 
         <div id="header">
           <font
@@ -202,7 +546,275 @@
     <!-- Demo scripts for this page-->
     <script src="js/demo/datatables-demo.js"></script>
     <script src="js/demo/chart-area-demo.js"></script>
+    <script>
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
 
+        function hamburgerMenuPressed() {
+            if($( "#page-top" ).hasClass( "sidebar-toggled" )){
+                document.getElementById("utilitiesDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("electricityDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("transportationDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("automativeDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("agricultureDropdown").classList.remove("dropdown-item-small");
+                document.getElementById("manufactoringDropdown").classList.remove("dropdown-item-small");
+
+
+            }else{
+
+                document.getElementById("utilitiesDropdown").classList.add("dropdown-item-small");
+                document.getElementById("electricityDropdown").classList.add("dropdown-item-small");
+                document.getElementById("transportationDropdown").classList.add("dropdown-item-small");
+                document.getElementById("automativeDropdown").classList.add("dropdown-item-small");
+                document.getElementById("agricultureDropdown").classList.add("dropdown-item-small");
+                document.getElementById("manufactoringDropdown").classList.add("dropdown-item-small");
+            }
+        }
+
+        function showCloseLayer() {
+            document.getElementById("closeLayer").classList.add("show");
+            document.getElementById("closeLayer").classList.remove("hidden");
+
+        }
+
+        function hideCloseLayer() {
+            document.getElementById("closeLayer").classList.remove("show");
+            document.getElementById("closeLayer").classList.add("hidden");
+
+        }
+
+        function closeIndustryPanels() {
+            document.getElementById("utilitiesDropdown").classList.remove("show");
+            document.getElementById("electricityDropdown").classList.remove("show");
+            document.getElementById("transportationDropdown").classList.remove("show");
+            document.getElementById("automativeDropdown").classList.remove("show");
+            document.getElementById("agricultureDropdown").classList.remove("show");
+            document.getElementById("manufactoringDropdown").classList.remove("show");
+
+
+
+            hideCloseLayer();
+
+        }
+
+        function closeUtilitiesPanel() {
+            document.getElementById("utilitiesDropdown").classList.remove("show");
+        }
+
+        function closeElectirictyPanel() {
+            document.getElementById("electricityDropdown").classList.remove("show");
+        }
+
+        function closeAutomativePanel() {
+            document.getElementById("automativeDropdown").classList.remove("show");
+        }
+
+        function closeAgriculturePanel() {
+            document.getElementById("agricultureDropdown").classList.remove("show");
+        }
+
+        function closeManufactoringPanel() {
+            document.getElementById("manufactoringDropdown").classList.remove("show");
+        }
+
+        function closeTransportationPanel() {
+            document.getElementById("transportationDropdown").classList.remove("show");
+        }
+
+        function openUtilitiesPanel() {
+            //closeUtilitiesPanel();
+            closeElectirictyPanel();
+            closeAutomativePanel();
+            closeAgriculturePanel();
+            closeManufactoringPanel();
+            closeTransportationPanel();
+            document.getElementById("utilitiesDropdown").classList.toggle("show");
+
+            if($( "#utilitiesDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+
+        }
+
+        function filterFunctionUtilities() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("utilitiesInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("utilitiesDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+
+        function openElectricityPanel() {
+            closeUtilitiesPanel();
+            //closeElectirictyPanel();
+            closeAutomativePanel();
+            closeAgriculturePanel();
+            closeManufactoringPanel();
+            closeTransportationPanel();
+
+
+            document.getElementById("electricityDropdown").classList.toggle("show");
+
+            if($( "#electricityDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+        }
+
+        function openAgriculturePanel() {
+            closeUtilitiesPanel();
+            closeElectirictyPanel();
+            closeAutomativePanel();
+            //closeAgriculturePanel();
+            closeManufactoringPanel();
+            closeTransportationPanel();
+            document.getElementById("agricultureDropdown").classList.toggle("show");
+
+            if($( "#agricultureDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+        }
+
+        function openManufactoringPanel() {
+            closeUtilitiesPanel();
+            closeElectirictyPanel();
+            closeAutomativePanel();
+            closeAgriculturePanel();
+            //closeManufactoringPanel();
+            closeTransportationPanel();
+            document.getElementById("manufactoringDropdown").classList.toggle("show");
+
+            if($( "#manufactoringDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+        }
+
+        function openAutomativePanel() {
+            closeUtilitiesPanel();
+            closeElectirictyPanel();
+            //closeAutomativePanel();
+            closeAgriculturePanel();
+            closeManufactoringPanel();
+            closeTransportationPanel();
+            document.getElementById("automativeDropdown").classList.toggle("show");
+
+            if($( "#automativeDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+        }
+
+
+        function openTransportationPanel() {
+            closeUtilitiesPanel();
+            closeElectirictyPanel();
+                closeAutomativePanel();
+            closeAgriculturePanel();
+            closeManufactoringPanel();
+            //closeTransportationPanel();
+            document.getElementById("transportationDropdown").classList.toggle("show");
+
+
+            if($( "#transportationDropdown" ).hasClass( "show" )){
+                showCloseLayer();
+            }else{
+                hideCloseLayer();
+            }
+        }
+        function filterFunctionElectricity() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("electricityInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("electricityDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function filterFunctionAutomative() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("automativeInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("automativeDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+        function filterFunctionAgriculture() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("agricultureInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("agricultureDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+
+        function filterFunctionManufactoring() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("manufactoringInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("manufactoringDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+
+
+
+        function filterFunctionTransportation() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("transportationInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("transportationDropdown");
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+    </script>
   </body>
 
 </html>
