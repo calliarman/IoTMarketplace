@@ -68,13 +68,7 @@
   }
 
 
-  #closeLayer{
-    width: 100%;
-      height: 90%;
-    background: transparent;
-    position: absolute;
-    z-index: 1;
-  }
+
   
 
   #utilitiesInput {
@@ -352,13 +346,14 @@
 
       <div id="content-wrapper">
 
-          <div id="closeLayer" class="" onclick="closeIndustryPanels()">
+          <div id="closeLayer" class="hidden" onclick="closeIndustryPanels()">
 
           </div>
 
           <div id="utilitiesDropdown" class="dropdown-content utilities-dropdown">
               <input type="text" placeholder="Utilities" id="utilitiesInput" onkeyup="filterFunctionUtilities()">
               <a href="gediz.html">Gediz</a>
+              <a href="gediz.html">Turkcell</a>
               <a href="#base">Iski</a>
               <a href="#blog">Izsu</a>
               <a href="#contact">Tedas</a>
