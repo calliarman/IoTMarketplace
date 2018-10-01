@@ -7,9 +7,9 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+    labels: ["August 12", "August 14", "August 20", "August 25", "August 28", "September 2", "September 6", "September 12", "September 18", "September 21", "September 25", "September 29", "October 1"],
     datasets: [{
-      label: "Sessions",
+      label: "Total Download",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
@@ -20,7 +20,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
+      data: [342, 1233, 3456, 7453, 10233, 15343, 18232, 21023, 24923, 39233, 45233, 50021, 75343],
     }],
   },
   options: {
@@ -39,7 +39,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 40000,
+          max: 100000,
           maxTicksLimit: 5
         },
         gridLines: {
